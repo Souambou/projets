@@ -7,11 +7,10 @@ if(isset($_POST['modifier']))
      if(!empty($_POST['nom']) and !empty($_POST['prenom']) and !empty($_POST['age']))   
      {   
         
-       $nom =$_POST['nom'];
-       $prenom =$_POST['prenom'];
-       $age =$_POST['age'];
+        $nom =$_POST['nom'];
+        $prenom =$_POST['prenom'];
+        $age =$_POST['age'];
        
-      
          if(!empty($_FILES)){
 
             $file_name = $_FILES['fichier']['name'];
@@ -34,28 +33,30 @@ if(isset($_POST['modifier']))
              if($resultat)
              {  
 
-             $erreur='Mise à jour effectué avec succès      <a href="admin.php">voir</a>'; 
+               $erreur='Mise à jour effectué avec succès      <a href="admin.php">voir</a>'; 
 
-             }  
+             }      
                 else 
                 {
-                  die(mysqli_error($con));
+                     die(mysqli_error($con));
                 }
 
          }   
          
         
            else{
-           $erreur= 'l\'extension de votre fichier est invalide';
-         }
+                   $erreur= 'l\'extension de votre fichier est invalide';
+              }
             
         }
 
-     } else{
-        $erreur ="veillez renseigner tous les champs";
-     } 
+     }  
+       
+        else     {
+                $erreur ="veillez renseigner tous les champs";
+                } 
 
-    }
+       }
 ?>
 
  <!doctype html>
@@ -98,16 +99,16 @@ if(isset($erreur)) { ?>
              <div class="card bg-dark text-light">
             <div class="card-header">
            <h1 class=" wow fadeInUp b-title fs-2" style="text-align:center; color:'white">Mettre à jour les informations</h1>
-            </div>
-              <div class=" wow fadeInUp card-body border-top border-warning"> 
+           </div> 
+
+              <div class=" wow fadeInUp card-body border-top border-danger"> 
               <form  method="POST" action=""  enctype="multipart/form-data">
                   <div class="field">
                   <label for="pseudo" class="form-label"> nouveau nom:</label> 
                   <div class="input-group mb-3">
                             
                    <input type="text" name="nom" class="form-control" placeholder="entrer votre nom" aria-label="Username"   aria-describedby="basic-name">
-                   </div>
-
+                   </div>  
                   </div> 
 
                   <div class="field">

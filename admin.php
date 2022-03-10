@@ -48,8 +48,6 @@
         $sql="SELECT * FROM exolabs";
         $resultat = mysqli_query($con,$sql);
         if($resultat){
-             // $row=mysqli_fetch_assoc($resultat);
-             // echo $row['name'];
               $row=mysqli_fetch_assoc($resultat); 
               while($row=mysqli_fetch_assoc($resultat)){
                 //mysql_fetch_assoc lit une ligne de resultat mysql dans un tableau associatif
